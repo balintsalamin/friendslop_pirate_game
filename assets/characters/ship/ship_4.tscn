@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://diyacpbflgte0"]
+
+[ext_resource type="PackedScene" uid="uid://chxhvxps0jpo2" path="res://scripts/player/ship4.glb" id="1_m2ux6"]
+
+[node name="ship4" unique_id=2083137030 instance=ExtResource("1_m2ux6")]

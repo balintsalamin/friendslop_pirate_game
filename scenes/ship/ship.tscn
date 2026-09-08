@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://1r2ld5yxu7xy" path="res://scenes/ship/ship.gd" id="1_ccv4y"]
 [ext_resource type="PackedScene" uid="uid://jpy28448vxch" path="res://assets/characters/ship/ship3.fbx" id="2_u5c2e"]
 [ext_resource type="PackedScene" uid="uid://chxhvxps0jpo2" path="res://scripts/player/ship4.glb" id="3_wxx60"]
+[ext_resource type="PackedScene" uid="uid://b1ybdvb83rxj7" path="res://scripts/player/ship6.glb" id="4_iyjb8"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kw1gy"]
 properties/0/path = NodePath(".:transform")
@@ -45,7 +46,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48141682, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Helm" unique_id=1740343331]
-transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, 0, 1, 2)
+transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, 0, 3.8129182, 4.311796)
 shape = SubResource("BoxShape3D_jq8tk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helm/CollisionShape3D" unique_id=38313403]
@@ -62,3 +63,7 @@ shape = SubResource("BoxShape3D_6fhyq")
 
 [node name="ship4" parent="." unique_id=2083137030 instance=ExtResource("3_wxx60")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.999, -7.598)
+visible = false
+
+[node name="ship7" parent="." unique_id=1925298787 instance=ExtResource("4_iyjb8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1, -7.682)

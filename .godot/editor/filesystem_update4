@@ -1,0 +1,5 @@
+res://assets/characters/player/meshes/godot_robot_chest.tres
+res://assets/characters/player/meshes/godot_robot_face.tres
+res://assets/characters/player/meshes/godot_robot_bottom.tres
+res://assets/characters/player/meshes/godot_robot_limbs_and_head.tres
+res://scenes/ship/ship.tscn
