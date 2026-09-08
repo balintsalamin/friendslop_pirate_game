@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://gyql24fwib8u"]
+
+[ext_resource type="Texture2D" uid="uid://bod55c64uwadg" path="res://assets/environment/textures/prototype_dark.png" id="1_floor"]
+[ext_resource type="Texture2D" uid="uid://deemrlaoume8q" path="res://assets/environment/textures/prototype_orange.png" id="2_orange"]
+[ext_resource type="PackedScene" uid="uid://cbht4cdb14eci" path="res://assets/characters/ship/suzanne.glb" id="3_xvrx0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(100, 0.4, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_texture = ExtResource("1_floor")
+roughness = 0.85
+uv1_triplanar = true
+texture_filter = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_floor"]
+material = SubResource("StandardMaterial3D_floor")
+size = Vector3(100, 0.4, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_low_cover"]
+size = Vector3(6, 1.4, 2.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orange"]
+albedo_texture = ExtResource("2_orange")
+roughness = 0.78
+uv1_triplanar = true
+texture_filter = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_low_cover"]
+material = SubResource("StandardMaterial3D_orange")
+size = Vector3(6, 1.4, 2.4)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pillar"]
+height = 1.25
+radius = 16.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pillar"]
+material = SubResource("StandardMaterial3D_orange")
+top_radius = 16.0
+bottom_radius = 16.0
+height = 1.25
+radial_segments = 20
+
+[node name="Arena" type="Node3D" unique_id=1688246908]
+
+[node name="Decoration" type="Node3D" parent="." unique_id=723015728]
+
+[node name="Geometry" type="StaticBody3D" parent="." unique_id=1268597188]
+collision_layer = 2
+collision_mask = 0
+
+[node name="GroundCollision" type="CollisionShape3D" parent="Geometry" unique_id=1909440722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+shape = SubResource("BoxShape3D_floor")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Geometry/GroundCollision" unique_id=40864318]
+mesh = SubResource("BoxMesh_floor")
+skeleton = NodePath("../..")
+
+[node name="LowCoverEastCollision" type="CollisionShape3D" parent="Geometry" unique_id=1239582405]
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 32, 0.7, 0)
+shape = SubResource("BoxShape3D_low_cover")
+
+[node name="LowCoverEastMesh" type="MeshInstance3D" parent="Geometry/LowCoverEastCollision" unique_id=35803411]
+mesh = SubResource("BoxMesh_low_cover")
+skeleton = NodePath("../..")
+
+[node name="PillarSoutheastCollision" type="CollisionShape3D" parent="Geometry" unique_id=1261819063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_pillar")
+
+[node name="PillarSoutheastMesh" type="MeshInstance3D" parent="Geometry/PillarSoutheastCollision" unique_id=739499432]
+mesh = SubResource("CylinderMesh_pillar")
+skeleton = NodePath("../..")
+
+[node name="suzanne" parent="." unique_id=1508472934 instance=ExtResource("3_xvrx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.16298, 0.9218758, 6.329171)

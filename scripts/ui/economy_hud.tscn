@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2bib2yuni6ls"]
+
+[ext_resource type="Script" uid="uid://bksjxt8dbvn1r" path="res://scripts/ui/economy_hud.gd" id="1_qdffj"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=788387457]
+script = ExtResource("1_qdffj")
+
+[node name="Label" type="Label" parent="." unique_id=1219292309]
+offset_right = 40.0
+offset_bottom = 18.0

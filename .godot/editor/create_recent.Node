@@ -1,0 +1,7 @@
+Label
+CanvasLayer
+CollisionShape3D
+MeshInstance3D
+StaticBody3D
+MultiplayerSynchronizer
+AnimatableBody3D
